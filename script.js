@@ -98,7 +98,7 @@ let weather = {
         document.querySelector(".windchill").style.color = "white";
         document.querySelector(".wind").style.color = "white";
 
-        if (temp < 11) {
+        if (temp < 11 || temp > 89) {
             //console.log("This is the temp: ", temp)
             document.querySelector(".temp").style.color = "red";
             document.querySelector(".tempC").style.color = "red";
@@ -180,6 +180,12 @@ let weather = {
             document.querySelector(".tomWind").style.color = "red";
         };
 
+        if (tomTemp < 11 || tomTemp > 89) {
+            //console.log("This is the temp: ", temp)
+            document.querySelector(".tomTemp").style.color = "red";
+            document.querySelector(".tomTempC").style.color = "red";
+        };
+
 
         document.querySelector(".weather").classList.remove("loading");
         //console.log(city);
@@ -188,7 +194,7 @@ let weather = {
             "url('https://source.unsplash.com/1920x1080/?" + place + "')";
 
         dayForecast(data);
-    },
+    }
 
 
 };

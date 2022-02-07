@@ -152,6 +152,11 @@ function dayForecast(data) {
                 precipWarning = "color:red";
             };
 
+            if (dtempMax < 10 || dtempMax > 89 || dtempMin < 10 || dtempMin > 89) {
+                dayTempWarning = "color:red";
+            }
+
+
             //Holder for scooter image
 
             let dayPrecip = getPrecip(daySnow, dayRain);
@@ -160,7 +165,7 @@ function dayForecast(data) {
             fday = `<div class="forecast-day">
 						${dayname}<br />
             <img src=${dic}></img>
-						<div class="forecast-day--temp">${dtempMax}<sup>°F</sup>/${dtempMin}<sup>°F</sup></div>
+						<div class="forecast-day--temp" style="dayTempWarning">${dtempMax}<sup>°F</sup>/${dtempMin}<sup>°F</sup></div>
             <p>${capDayDetail}</p> 
             <div class = "dailyPrecip" style = ${precipWarning}> ${dayPrecip}</div>
             <p class= "dayWindData" id = ${d} style = ${warning}>Wind: ${dayWindDirection} ${dayWind} mph</p> 
