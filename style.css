@@ -1,0 +1,384 @@
+body {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: #222;
+    background-image: url('https://source.unsplash.com/1600x900/?landscape');
+    font-size: 100%;
+}
+
+#topHeader {
+    background: #000000d0;
+    color: white;
+    width: 50%;
+    border-radius: 30px;
+    vertical-align: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.card {
+    background: #000000d0;
+    color: white;
+    font-size: 1vw;
+    padding: 5px;
+    border-radius: 30px;
+    min-width: 25%;
+    max-width: 33%;
+    min-height: 20%;
+    max-height: 25%;
+    margin: 10px;
+    display: inline-block;
+}
+
+.hourTable {
+    margin-left: 1em;
+    margin-right: 1em;
+    font-size: 0.8vw;
+}
+
+button {
+    margin: 0.5em;
+    border-radius: 50%;
+    border: none;
+    height: 44px;
+    width: 44px;
+    outline: none;
+    background: #7c7c7c2b;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+button:hover {
+    background: #7c7c7c6b;
+}
+
+.center {
+    margin: 0 auto;
+    display: flex;
+    width: 90%;
+    padding: 10px;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 1.8vw;
+}
+
+h1.temp {
+    margin: 0;
+    margin-bottom: 0.1em;
+}
+
+h2,
+.temps {
+    text-align: center;
+    font-size: 1.3vw;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.description {
+    text-transform: capitalize;
+    margin-left: 8px;
+}
+
+.temp,
+.tempC,
+.windchill,
+.wind {
+    color: white;
+}
+
+.weather.loading {
+    visibility: hidden;
+    max-height: 20px;
+    position: relative;
+}
+
+.weather.loading:after {
+    visibility: visible;
+    content: "Loading...";
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 20px;
+}
+
+.walerts {
+    background-color: red;
+    color: white;
+    display: hidden;
+    border-radius: 20px;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+
+.icon,
+.tomIcon {
+    height: 80px;
+}
+
+.dayContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.dayCard {
+    background: #000000d0;
+    color: white;
+    padding: 10px;
+    border-radius: 30px;
+    display: inline-block;
+    justify-content: center;
+}
+
+.forecast {
+    font-size: .8vw;
+}
+
+.forecast-day {
+    margin: 10px;
+    display: inline-block;
+    text-align: center;
+    background-color: rgb(88, 88, 88);
+    border-radius: 20px;
+    padding: 1em;
+}
+
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+.modal-header {
+    padding: 2px 6px;
+    background-color: red;
+    color: white;
+}
+
+
+/* Modal Content/Box */
+
+.modal-content {
+    position: relative;
+    background-color: rgb(41, 32, 32);
+    color: white;
+    margin: auto;
+    padding: 0;
+    border: 1px solid rgb(243, 20, 20);
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+.modal-body {
+    font-size: .7vw;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+
+/* Add Animation */
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+
+/* The Close Button */
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+th {
+    text-align: center;
+    padding: 10px;
+}
+
+td {
+    text-align: center;
+}
+
+tr {
+    height: 20px;
+}
+
+.hhIcon {
+    height: 25px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 160px;
+    height: 25px;
+    padding: 3px;
+    margin-left: 50px;
+    margin-top: 10px;
+    background: linear-gradient(to bottom, #eeeeee, #FFFFFF 25px);
+    background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF 25px);
+    border-radius: 18px;
+    box-shadow: inset 0 -1px white, inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.switch-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.switch-label {
+    position: relative;
+    display: block;
+    height: inherit;
+    font-size: 10px;
+    text-transform: uppercase;
+    background: #fff2a9;
+    border-radius: inherit;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);
+}
+
+.switch-label:before,
+.switch-label:after {
+    position: absolute;
+    top: 50%;
+    margin-top: -.5em;
+    line-height: 1;
+    -webkit-transition: inherit;
+    -moz-transition: inherit;
+    -o-transition: inherit;
+    transition: inherit;
+}
+
+.switch-label:before {
+    content: attr(data-off);
+    right: 11px;
+    color: black;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.switch-label:after {
+    content: attr(data-on);
+    left: 11px;
+    color: black;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+}
+
+.switch-input:checked~.switch-label {
+    background: #ddbd5d;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.switch-input:checked~.switch-label:before {
+    opacity: 0;
+}
+
+.switch-input:checked~.switch-label:after {
+    opacity: 1;
+}
+
+.switch-handle {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 25px;
+    height: 25px;
+    background: linear-gradient(to bottom, #FFFFFF 40%, #f0f0f0);
+    background-image: -webkit-linear-gradient(top, #FFFFFF 40%, #f0f0f0);
+    border-radius: 100%;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.switch-handle:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -6px 0 0 -6px;
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(to bottom, #eeeeee, #FFFFFF);
+    background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF);
+    border-radius: 6px;
+    box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
+}
+
+.switch-input:checked~.switch-handle {
+    left: 135px;
+    box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Transition
+      ========================== */
+
+.switch-label,
+.switch-handle {
+    transition: All 0.3s ease;
+    -webkit-transition: All 0.3s ease;
+    -moz-transition: All 0.3s ease;
+    -o-transition: All 0.3s ease;
+}

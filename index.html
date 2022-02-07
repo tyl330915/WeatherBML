@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+    <script src="./script2.js" defer></script>
+
+</head>
+
+<body>
+
+    <div style="background: #000000d0; color:white; width: 50%; text-align: center; margin:auto; margin-top: 10px; border-radius: 30px; height: 8%;">
+        <div style="display:inline-block">
+            <h1 id="topName"></h1>
+        </div>
+        <div style="display:inline-block"><label class="switch">
+            <input class="switch-input" type="checkbox" />
+            <span class="switch-label" data-on="Old Minster Lovell" data-off="Burlington"></span> <span class="switch-handle"></span> 
+        </label></div>
+
+    </div>
+
+
+    <!--div class="center" id="topHeader">
+        <div style="height: 50px; ">
+            <h1 id="topName"></h1>
+        </div>
+        <div><label class="switch">
+            <input class="switch-input" type="checkbox" />
+            <span class="switch-label" data-on="Old Minster Lovell" data-off="Burlington"></span> <span class="switch-handle"></span> 
+        </label></div>
+    </div-->
+
+
+    <container class="center">
+
+
+        <div class="card">
+
+            <div class="weather loading">
+                <h2 class="city">Current Weather</h2>
+
+                <div class="temps">
+                    <h1 class="temp" style="display:inline-block"></h1>
+                    <h4 class="tempC" style="display:inline-block"></h4>
+                    <img src="" alt="" class="icon" style="display:inline-block" />
+                    <h5 class="description" style="display:inline-block"></h5>
+                </div>
+                <div style="text-align: center">
+                    <div class="humidity">Humidity: 60%</div>
+                    <div class="wind">Wind speed: 6.2 mph</div>
+                    <div class="gust"></div>
+                    <div class="windchill">Wind chill: 6.2 mph</div>
+                    <div class="precip">Precipitation today: None</div>
+                    <br />
+                    <div class="todayDesc"></div>
+                    <br>
+                    <div class="walerts" onclick="showModal()">* Weather Alert *</div>
+                    <!--img class="tIcon"></img>
+                    <img class="scooter" style="width: 40px; display: none"></img-->
+                </div>
+
+
+                <!--p></p>
+                <div class="walerts" onclick="showModal()">* Weather Alert *</div-->
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Hourly</h2>
+            <div class="hourlyForecast">
+                <div class="flex">
+                    <table class="hourTable" id="hourTable"></table>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <!--div class="weather loading"-->
+            <h2>Tomorrow</h2>
+            <div class="temps">
+                <h1 class="tomTemp" style="display:inline-block"></h1>
+                <h4 class="tomTempC" style="display:inline-block"></h4>
+                <img alt="" class="tomIcon" style="display:inline-block" />
+                <div class="tomDesc" style="display:inline-block"></div>
+            </div>
+            <div style="text-align: center">
+                <div class="tomHum">Humidity: 60%</div>
+                <div class="tomWind">Wind speed: 6.2 mph</div>
+                <div class="tomGust"></div>
+                <div class="tomChill">Wind chill: 6.2 mph</div>
+
+                <div class="tomPrecip">Precip </div><br />
+                <div class="tomHiLo">High/Low </div>
+                <br />
+                <img class="tomScooter" style="width: 40px"></img>
+
+            </div>
+
+            <p></p>
+            <!--div class="tomAlerts">Alerts: </div-->
+        </div>
+        </div>
+
+
+
+
+
+
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Weather Alerts</h2>
+                </div>
+                <div class="modal-body">
+                    <p>Some text in the Modal Body</p>
+                    <p>Some other text...</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </container>
+
+    <div class="dayContainer">
+        <div class="dayCard">
+            <div class="forecast"> </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
