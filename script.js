@@ -177,7 +177,7 @@ let weather = {
         if (tomSnow > 3 || tomRain > 1) {
             document.querySelector(".tomPrecip").style.color = "red";
         }
-        if (Math.round(tomWindSpeed) > 20) {
+        if (Math.round(tomWindSpeed) > 19) {
             document.querySelector(".tomWind").style.color = "red";
         };
 
