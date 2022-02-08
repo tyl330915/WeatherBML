@@ -266,7 +266,7 @@ function drawTableAddHeaders(obj, headers, target) {
 };
 
 function getPrecip(sno, rane) {
-    //console.log("Sno rane", sno, rane);
+    console.log("Sno rane", sno, rane);
     if (sno && rane) {
         dayPrecip = "Snow: " + sno, "Rain: " + rane;
     };

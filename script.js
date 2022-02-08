@@ -60,11 +60,11 @@ let weather = {
         timeOffset = data.timezone_offset;
 
         if (data.daily[0].snow) {
-            tSnow = "Snow: " + convertMMtoInches(data.daily[0].snow);
+            tSnow = convertMMtoInches(data.daily[0].snow);
 
         };
         if (data.current.rain) {
-            tRain = "Rain: " + convertMMtoInches(data.current.rain);
+            tRain = convertMMtoInches(data.current.rain);
         };
 
         //console.log("Curr temp: ", temp);
@@ -88,6 +88,7 @@ let weather = {
         //document.querySelector(".tIcon").src = "https://openweathermap.org/img/wn/" + tIcon + ".png";
         document.querySelector(".precip").innerText = "";
         document.querySelector(".precip").innerText = getPrecip(tSnow, tRain);
+        console.log("double: ", getPrecip(tSnow, tRain));
 
         //if (temp < 20) {
         //    document.querySelector(".scooter").src = "./support/noscooter.png";
