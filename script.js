@@ -181,7 +181,7 @@ let weather = {
             document.querySelector(".tomWind").style.color = "red";
         };
 
-        if (tomTemp < 11 || tomTemp > 89) {
+        if (tomTemp < 11 || tomTemp > 85) {
             //console.log("This is the temp: ", temp)
             document.querySelector(".tomTemp").style.color = "red";
             document.querySelector(".tomTempC").style.color = "red";
