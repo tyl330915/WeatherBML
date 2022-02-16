@@ -99,7 +99,7 @@ let weather = {
         document.querySelector(".windchill").style.color = "white";
         document.querySelector(".wind").style.color = "white";
 
-        if (temp < 11 || temp > 89) {
+        if (temp < 11 || temp > 85) {
             //console.log("This is the temp: ", temp)
             document.querySelector(".temp").style.color = "red";
             document.querySelector(".tempC").style.color = "red";
@@ -132,6 +132,7 @@ let weather = {
         //console.log("wind: ", windSpeed);
         if (windSpeed > 20) {
             document.querySelector(".wind").style.color = "red";
+            document.querySelector(".gust").style.color = "red";
         };
 
         //Tomorrow
@@ -179,6 +180,7 @@ let weather = {
         }
         if (Math.round(tomWindSpeed) > 19) {
             document.querySelector(".tomWind").style.color = "red";
+            document.querySelector(".tomGust").style.color = "red";
         };
 
         if (tomTemp < 11 || tomTemp > 85) {
