@@ -37,7 +37,7 @@ let weather = {
 
         let justTime = localTime.split(",")[1].trim();
         let hourMin = justTime.split(":")[0] + ":" + justTime.split(":")[1] + " " + justTime.split(" ")[1];
-        console.log(hourMin);
+        //console.log(hourMin);
 
 
 
@@ -88,7 +88,7 @@ let weather = {
         //document.querySelector(".tIcon").src = "https://openweathermap.org/img/wn/" + tIcon + ".png";
         document.querySelector(".precip").innerText = "";
         document.querySelector(".precip").innerText = getPrecip(tSnow, tRain);
-        console.log("double: ", getPrecip(tSnow, tRain));
+        //console.log("double: ", getPrecip(tSnow, tRain));
 
         //if (temp < 20) {
         //    document.querySelector(".scooter").src = "./support/noscooter.png";
@@ -105,7 +105,7 @@ let weather = {
             document.querySelector(".tempC").style.color = "red";
             document.querySelector(".windchill").style.color = "red";
         }
-        console.log("Day precip: ", "Snow: ", data.daily[0].snow, "Rain: ", data.daily[0].rain);
+        //console.log("Day precip: ", "Snow: ", data.daily[0].snow, "Rain: ", data.daily[0].rain);
         if (convertMMtoInches(data.daily[0].snow) !== 'undefined' && convertMMtoInches(data.daily[0].snow) > 2) {
             document.querySelector(".precip").style.color = "red";
         }
@@ -129,7 +129,7 @@ let weather = {
             };
             wAlerts.style.display = "block";
         }
-        console.log("wind: ", windSpeed);
+        //console.log("wind: ", windSpeed);
         if (windSpeed > 20) {
             document.querySelector(".wind").style.color = "red";
         };
