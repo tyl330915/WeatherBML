@@ -46,8 +46,8 @@ let weather = {
         //TODAY
         const { icon, description } = data.current.weather[0];
         const { temp, humidity, feels_like, wind_deg } = data.current; //wind_speed
-        const windSpeed = data.daily[0].wind_speed;
-        const gusts = data.daily[0].wind_gust;
+        const windSpeed = data.current.wind_speed;
+        const gusts = data.current.wind_gust;
         let tDesc = data.current.weather[0].main;
         const tHigh = data.daily[0].temp.max;
         const tLow = data.daily[0].temp.min;
