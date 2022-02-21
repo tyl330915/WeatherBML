@@ -130,8 +130,12 @@ let weather = {
             wAlerts.style.display = "block";
         }
         //console.log("wind: ", windSpeed);
-        if (windSpeed > 20) {
+        if (windSpeed > 19) {
             document.querySelector(".wind").style.color = "red";
+
+        };
+
+        if (gusts > 19) {
             document.querySelector(".gust").style.color = "red";
         };
 
