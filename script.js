@@ -184,6 +184,8 @@ let weather = {
         }
         if (Math.round(tomWindSpeed) > 19) {
             document.querySelector(".tomWind").style.color = "red";
+        };
+        if (Math.round(tomGusts) > 19) {
             document.querySelector(".tomGust").style.color = "red";
         };
 
