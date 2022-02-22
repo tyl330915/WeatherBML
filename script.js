@@ -61,10 +61,11 @@ let weather = {
 
         if (data.daily[0].snow) {
             tSnow = convertMMtoInches(data.daily[0].snow);
-
         };
-        if (data.current.rain) {
-            tRain = convertMMtoInches(data.current.rain);
+
+        if (data.daily[0].rain) {
+            tRain = convertMMtoInches(data.daily[0].rain);
+
         };
 
         //console.log("Curr temp: ", temp);
@@ -125,7 +126,7 @@ let weather = {
             console.log("walerts called");
             for (let i = 0; i < weatherAlerts.length; i++) {
                 let alertContent = weatherAlerts[i].description;
-                alertContents += alertContent;
+                alertContents += alertContent + `<p>`;
             };
             wAlerts.style.display = "block";
         }
