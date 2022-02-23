@@ -213,7 +213,7 @@ function showModal() {
     // When the user clicks on the button, open the modal
     modal.style.display = "block";
 
-    document.querySelector(".modal-body").innerText = alertContents;
+    //document.querySelector(".modal-body").innerText = alertContents;
 
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {

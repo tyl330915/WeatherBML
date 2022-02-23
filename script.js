@@ -124,9 +124,25 @@ let weather = {
 
         if (weatherAlerts) {
             console.log("walerts called");
+            document.querySelector(".modal-body").innerText = "";
+
             for (let i = 0; i < weatherAlerts.length; i++) {
-                let alertContent = weatherAlerts[i].description;
-                alertContents += alertContent + `<p>`;
+                // Create an "li" node:
+                const node = document.createElement("li");
+                const pNode = document.createElement("p");
+
+                // Create a text node:
+                const textnode = document.createTextNode(weatherAlerts[i].description);
+
+                // Append the text node to the "li" node:
+                node.appendChild(textnode);
+
+                // Append the "li" node to the list:
+                document.querySelector(".modal-body").appendChild(node);
+                document.querySelector(".modal-body").appendChild(pNode);
+
+                //let alertContent = weatherAlerts[i].description;
+                //alertContents += alertContent;
             };
             wAlerts.style.display = "block";
         }
