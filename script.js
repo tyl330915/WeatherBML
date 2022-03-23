@@ -147,12 +147,18 @@ let weather = {
             wAlerts.style.display = "block";
         }
         //console.log("wind: ", windSpeed);
+        document.querySelector(".wind").style.color = "";
+        document.querySelector(".gust").style.color = "";
+        document.querySelector(".precip").style.color = "";
+        document.querySelector(".temp").style.color = "";
+        document.querySelector(".tempC").style.color = "";
+
         if (windSpeed > 19) {
             document.querySelector(".wind").style.color = "red";
 
         };
-
-        if (gusts > 19) {
+        console.log("Gusts: ", gusts);
+        if (gusts >= 20) {
             document.querySelector(".gust").style.color = "red";
         };
 
@@ -194,6 +200,12 @@ let weather = {
         document.querySelector(".tomGust").innerText = "Gusts: " + Math.round(tomGusts) + " mph";
         document.querySelector(".tomPrecip").innerText = getPrecip(tomSnow, tomRain);
 
+
+        document.querySelector(".tomWind").style.color = "";
+        document.querySelector(".tomGust").style.color = "";
+        document.querySelector(".tomPrecip").style.color = "";
+        document.querySelector(".tomTemp").style.color = "";
+        document.querySelector(".tomTempC").style.color = "";
 
 
         if (tomSnow > 3 || tomRain > 1) {
